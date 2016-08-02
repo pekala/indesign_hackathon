@@ -9,7 +9,9 @@
     "contrast": "^1.0.1",
     "get-contrast": "^2.0.0",
     "marked": "^0.3.6",
-    "shallow-equals": "0.0.0"
+    "shallow-equals": "0.0.0",
+    "fs-extra": "0.30.0",
+    "deepcopy": "0.6.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
