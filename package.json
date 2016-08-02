@@ -7,11 +7,11 @@
   "devDependencies": {
     "cmyk-rgb": "^1.0.0",
     "contrast": "^1.0.1",
+    "deepcopy": "^0.6.3",
+    "fs-extra": "^0.30.0",
     "get-contrast": "^2.0.0",
     "marked": "^0.3.6",
-    "shallow-equals": "0.0.0",
-    "fs-extra": "0.30.0",
-    "deepcopy": "0.6.3"
+    "shallow-equals": "0.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
