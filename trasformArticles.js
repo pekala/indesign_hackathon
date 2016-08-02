@@ -47,7 +47,7 @@ const markdown = articles_with_images.map(article => {
                     } else {
                         rgbColor = style.fillColor.join();
                     }
-                    return `<div style="margin-bottom: 20px; color: rgb(${rgbColor === '255,255,255' ? '0,0,0' : rgbColor}); font-size: ${style.pointSize*1.2}pt; font-family: '${style.fontFamily}';">${style.content.replace('\r', ' ')}</div>`
+                    return `<div style="margin-bottom: 20px; color: rgb(${rgbColor === '255,255,255' ? '0,0,0' : rgbColor}); font-size: ${style.pointSize*1.2}pt; font-family: '${style.fontFamily}';">${style.content.replace('\r\r', '\n').replace('\r', ' ')}</div>`
                 }).join('');
             }).join('\n\n');
             return `\n${text}\n`;
