@@ -5,7 +5,6 @@ const marked = require('marked');
 const cmykRgb = require('cmyk-rgb');
 const equals = require('shallow-equals');
 const contrast = require('contrast');
-const copy_and_transform_image_file_paths = require('./getImages').copy_and_transform_image_file_paths;
 
 const article_base_path = '/tmp/'; /* Set this path in csfacade as well */
 const articles = require(article_base_path + 'articles.json');
@@ -52,7 +51,7 @@ const markdown = articles.map(article => {
             return `\n${text}\n`;
         } else if(content.type === 'image') {
             const path = content.path;
-            return `\n![](${path})\n`;
+            return `<p class="page">(Page ${content.page})</p>` + `\n![](${path})\n`;
         }
     }).join('');
 });
