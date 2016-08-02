@@ -15,7 +15,7 @@ const markdown = articles_with_images.map(article => {
     return article.content.map((content, index) => {
         if(content.type === 'text') {
             const text = content.textFrames.map(textFrame => {
-                return textFrame.textStyleRanges
+                return `<p class="page">(Page ${textFrame.page})</p>` + textFrame.textStyleRanges
                 .map(range => !!range.content.trim() ? range : range.content)
                 .reduce((allRanges, currentRange) => {
                     if (typeof currentRange === 'string') {

@@ -29,3 +29,10 @@ p {
     letter-spacing: -.003em;
     color: #333;
 }
+
+.page {
+    position: absolute;
+    transform: translateX(-150px);
+    color: #525252;
+    font-family: monospace;
+}
