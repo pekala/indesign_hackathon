@@ -9,9 +9,8 @@ const copy_and_transform_image_file_paths = require('./getImages').copy_and_tran
 
 const article_base_path = '/tmp/'; /* Set this path in csfacade as well */
 const articles = require(article_base_path + 'articles.json');
-const articles_with_images = copy_and_transform_image_file_paths(articles, article_base_path + '/');
 
-const markdown = articles_with_images.map(article => {
+const markdown = articles.map(article => {
     return article.content.map((content, index) => {
         if(content.type === 'text') {
             const text = content.textFrames.map(textFrame => {
