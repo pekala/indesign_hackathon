@@ -7,7 +7,7 @@ const equals = require('shallow-equals');
 const contrast = require('contrast');
 const copy_and_transform_image_file_paths = require('./getImages').copy_and_transform_image_file_paths;
 
-const article_base_path = '/Users/penso/Dev/indesign_hack/'; /* Set this path in csfacade as well */
+const article_base_path = '/tmp/'; /* Set this path in csfacade as well */
 const articles = require(article_base_path + 'articles.json');
 const articles_with_images = copy_and_transform_image_file_paths(articles, article_base_path + '/');
 
