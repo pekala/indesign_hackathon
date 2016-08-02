@@ -1,12 +1,17 @@
 'use strict';
 
-const articles = require('./articles.json');
+
 const marked = require('marked');
 const cmykRgb = require('cmyk-rgb');
 const equals = require('shallow-equals');
 const contrast = require('contrast');
+const copy_and_transform_image_file_paths = require('./getImages').copy_and_transform_image_file_paths;
 
-const markdown = articles.map(article => {
+const article_base_path = '/Users/bach/article-extraction/'; /* Set this path in csfacade as well */
+const articles = require(article_base_path + 'articles.json');
+const articles_with_images = copy_and_transform_image_file_paths(articles, article_base_path + '/');
+
+const markdown = articles_with_images.map(article => {
     return article.content.map((content, index) => {
         if(content.type === 'text') {
             const text = content.textFrames.map(textFrame => {
@@ -47,7 +52,7 @@ const markdown = articles.map(article => {
             }).join('\n\n');
             return `\n${text}\n`;
         } else if(content.type === 'image') {
-            const path = '/' + content.path.split(':').slice(1).join('/');
+            const path = content.path;
             return `\n![](${path})\n`;
         }
     }).join('');
